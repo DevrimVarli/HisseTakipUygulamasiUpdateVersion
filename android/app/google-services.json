@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "494808083684",
+    "project_id": "borsaapp-a6032",
+    "storage_bucket": "borsaapp-a6032.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494808083684:android:f6cdd2e3a0ee4b6d94d0f1",
+        "android_client_info": {
+          "package_name": "com.example.borsa_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8ILT63AJ3Dl7ivPZTMPwGondZwv1v4fY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
