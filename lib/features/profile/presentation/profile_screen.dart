@@ -96,23 +96,23 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                             ),
                           ),
                         ),
-                        Spacer(flex: 3),
+                        Spacer(flex: 4),
                       ],
                     ),
                     Row(
                       children: <Widget>[
                         Spacer(),
-                        Icon(Icons.email, color: Colors.black54, size: 24),
+                        Icon(Icons.email, color: Colors.black, size: 24),
                         SizedBox(width: 8),
 
                         Text(
                           '${user.email}',
-                          style: TextStyle(fontSize: 16, color: Colors.grey),
+                          style: TextStyle(fontSize: 16, color: Colors.black),
                         ),
                         SizedBox(height: 4),
                         Text(
                           user.email ?? 'No email',
-                          style: TextStyle(fontSize: 16, color: Colors.grey),
+                          style: TextStyle(fontSize: 16, color: Colors.black),
                         ),
                         Spacer(flex: 3),
                       ],

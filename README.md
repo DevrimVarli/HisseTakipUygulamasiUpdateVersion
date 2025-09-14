@@ -22,9 +22,11 @@ Firebase, Riverpod, Hive, Dio ve Freezed gibi güçlü teknolojiler kullanılara
 ## 📸 Ekran Görüntüleri
 > Buraya proje ekran görüntülerini ekle (ör. `assets/screenshots/`)  
 
-| Giriş Ekranı | Hisse Listesi | Detay Sayfası |
-|--------------|---------------|---------------|
-| ![login](assets/screenshots/login.png) | ![list](assets/screenshots/list.png) | ![detail](assets/screenshots/detail.png) |
+| Anasayfa | Favoriler | Login | Profil | Portföy |
+|----------|-----------|-------|--------|---------|
+| ![anasayfa](assets/screenshots/anasayfa.png) | ![favoriler](assets/screenshots/favoriler.png) | ![login](assets/screenshots/login.png) | ![profil](assets/screenshots/profil.png) | ![portfoy](assets/screenshots/portfoy.png) |
+
+
 
 ---
 
