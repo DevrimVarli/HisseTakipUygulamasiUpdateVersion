@@ -2,6 +2,7 @@ import 'package:borsa_app/features/home_page/domain/hisse_model.dart';
 import 'package:borsa_app/features/portfolio/data/portfolio_add_data_repository.dart';
 import 'package:borsa_app/features/portfolio/domain/portfolio_add_params.dart';
 import 'package:dropdown_search/dropdown_search.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -26,11 +27,11 @@ class ShowDialog extends ConsumerWidget {
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Row(
+          Row(
             children: <Widget>[
               Icon(Icons.add_chart, color: Colors.white),
               SizedBox(width: 10),
-              Text('Hisse Ekle', style: TextStyle(color: Colors.white)),
+              Text('addStock'.tr(), style: TextStyle(color: Colors.white)),
             ],
           ),
           const SizedBox(height: 10),
@@ -73,7 +74,7 @@ class ShowDialog extends ConsumerWidget {
               // Input görünümü
               decoratorProps: DropDownDecoratorProps(
                 decoration: InputDecoration(
-                  labelText: 'Hisse Seçin',
+                  labelText: 'selectStock'.tr(),
                   labelStyle: const TextStyle(
                     color: Colors.amber,
                     fontWeight: FontWeight.w600,
@@ -259,7 +260,7 @@ class ShowDialog extends ConsumerWidget {
                     controller: maliyetController,
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
-                      labelText: 'Maliyet',
+                      labelText: 'cost'.tr(),
                       labelStyle: const TextStyle(color: Colors.white),
                       floatingLabelStyle: const TextStyle(
                         color: Colors.white, // yukarı çıktığında
@@ -293,7 +294,7 @@ class ShowDialog extends ConsumerWidget {
                     controller: adetController,
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
-                      labelText: 'Adet',
+                      labelText: 'quantity'.tr(),
                       labelStyle: const TextStyle(color: Colors.white),
                       floatingLabelStyle: const TextStyle(
                         color: Colors.white, // yukarı çıktığında
@@ -330,7 +331,7 @@ class ShowDialog extends ConsumerWidget {
       actions: <Widget>[
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text('İptal', style: TextStyle(color: Colors.white)),
+          child: Text('cancel'.tr(), style: TextStyle(color: Colors.white)),
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
@@ -345,14 +346,14 @@ class ShowDialog extends ConsumerWidget {
               portfolioAddDataProvider(
                 PortfolioAddParams(
                   name: selectedHisseName,
-                  maliyet: int.parse(maliyetController.text),
+                  maliyet: double.parse(maliyetController.text),
                   adet: int.parse(adetController.text),
                 ),
               ),
             );
             Navigator.of(context).pop();
           },
-          child: const Text('Ekle', style: TextStyle(color: Colors.white)),
+          child: Text('add'.tr(), style: TextStyle(color: Colors.white)),
         ),
       ],
     );

@@ -6,7 +6,7 @@ part of 'hisse.repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$hisseRepositoryHash() => r'18d361f61e104667e988692b621b248253c606c8';
+String _$hisseRepositoryHash() => r'7551b51c635c9adcce8bc72bc877b798a8b7c9ac';
 
 /// See also [hisseRepository].
 @ProviderFor(hisseRepository)

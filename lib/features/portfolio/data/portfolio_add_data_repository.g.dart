@@ -6,7 +6,7 @@ part of 'portfolio_add_data_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$portfolioAddDataHash() => r'52a626c8e1d27c352923fa2a1a230835e89f27d5';
+String _$portfolioAddDataHash() => r'f004d00a17d340760c406eda8fd0995083a76264';
 
 /// Copied from Dart SDK
 class _SystemHash {

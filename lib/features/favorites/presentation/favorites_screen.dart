@@ -21,31 +21,33 @@ class FavoritesScreen extends ConsumerWidget {
         preferredSize: const Size.fromHeight(60),
         child: CommonAppBar(title: 'Favorites', leadingIsActive: false),
       ),
-      body: ValueListenableBuilder<Box<String>>(
-        valueListenable: box.listenable(),
-        builder: (BuildContext context, Box<String> box, _) {
-          List<String> favoriteList = box.values.toList();
-          if (favoriteList.isEmpty) {
-            return Center(child: Text('Henüz favori eklenmedi'));
-          }
-          List<HisseModel> favoriteHisse = tumHisselerAsyncValue.value!
-              .where(
-                (HisseModel hisse) => favoriteList.contains(hisse.name),
-              ) // favoride olanları filtrele
-              .toList();
+      body: tumHisselerAsyncValue.value == null
+          ? Center(child: CircularProgressIndicator())
+          : ValueListenableBuilder<Box<String>>(
+              valueListenable: box.listenable(),
+              builder: (BuildContext context, Box<String> box, _) {
+                List<String> favoriteList = box.values.toList();
+                if (favoriteList.isEmpty) {
+                  return Center(child: Text('Henüz favori eklenmedi'));
+                }
+                List<HisseModel> favoriteHisse = tumHisselerAsyncValue.value!
+                    .where(
+                      (HisseModel hisse) => favoriteList.contains(hisse.name),
+                    ) // favoride olanları filtrele
+                    .toList();
 
-          return ListView.builder(
-            itemCount: favoriteHisse.length,
-            itemBuilder: (BuildContext context, int indeks) {
-              HisseModel hisse = favoriteHisse[indeks];
-              return Padding(
-                padding: const EdgeInsets.all(8),
-                child: HisseCard(hisse: hisse),
-              );
-            },
-          );
-        },
-      ),
+                return ListView.builder(
+                  itemCount: favoriteHisse.length,
+                  itemBuilder: (BuildContext context, int indeks) {
+                    HisseModel hisse = favoriteHisse[indeks];
+                    return Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: HisseCard(hisse: hisse),
+                    );
+                  },
+                );
+              },
+            ),
     );
   }
 }

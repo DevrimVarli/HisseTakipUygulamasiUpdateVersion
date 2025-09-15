@@ -7,7 +7,7 @@ part of 'portfolio_delete_data_repository.dart';
 // **************************************************************************
 
 String _$portfolioDeleteDataHash() =>
-    r'4f36bfe8c3cc1d76d31c8f3c42f190d8c92b1965';
+    r'9922f0cbf0c8c6106697887b5d78113197ebdd05';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -40,15 +40,15 @@ class PortfolioDeleteDataFamily extends Family<AsyncValue<void>> {
   const PortfolioDeleteDataFamily();
 
   /// See also [portfolioDeleteData].
-  PortfolioDeleteDataProvider call(String doc_id) {
-    return PortfolioDeleteDataProvider(doc_id);
+  PortfolioDeleteDataProvider call(String docId) {
+    return PortfolioDeleteDataProvider(docId);
   }
 
   @override
   PortfolioDeleteDataProvider getProviderOverride(
     covariant PortfolioDeleteDataProvider provider,
   ) {
-    return call(provider.doc_id);
+    return call(provider.docId);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -69,9 +69,9 @@ class PortfolioDeleteDataFamily extends Family<AsyncValue<void>> {
 /// See also [portfolioDeleteData].
 class PortfolioDeleteDataProvider extends AutoDisposeFutureProvider<void> {
   /// See also [portfolioDeleteData].
-  PortfolioDeleteDataProvider(String doc_id)
+  PortfolioDeleteDataProvider(String docId)
     : this._internal(
-        (ref) => portfolioDeleteData(ref as PortfolioDeleteDataRef, doc_id),
+        (ref) => portfolioDeleteData(ref as PortfolioDeleteDataRef, docId),
         from: portfolioDeleteDataProvider,
         name: r'portfolioDeleteDataProvider',
         debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -80,7 +80,7 @@ class PortfolioDeleteDataProvider extends AutoDisposeFutureProvider<void> {
         dependencies: PortfolioDeleteDataFamily._dependencies,
         allTransitiveDependencies:
             PortfolioDeleteDataFamily._allTransitiveDependencies,
-        doc_id: doc_id,
+        docId: docId,
       );
 
   PortfolioDeleteDataProvider._internal(
@@ -90,10 +90,10 @@ class PortfolioDeleteDataProvider extends AutoDisposeFutureProvider<void> {
     required super.allTransitiveDependencies,
     required super.debugGetCreateSourceHash,
     required super.from,
-    required this.doc_id,
+    required this.docId,
   }) : super.internal();
 
-  final String doc_id;
+  final String docId;
 
   @override
   Override overrideWith(
@@ -108,7 +108,7 @@ class PortfolioDeleteDataProvider extends AutoDisposeFutureProvider<void> {
         dependencies: null,
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
-        doc_id: doc_id,
+        docId: docId,
       ),
     );
   }
@@ -120,13 +120,13 @@ class PortfolioDeleteDataProvider extends AutoDisposeFutureProvider<void> {
 
   @override
   bool operator ==(Object other) {
-    return other is PortfolioDeleteDataProvider && other.doc_id == doc_id;
+    return other is PortfolioDeleteDataProvider && other.docId == docId;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, doc_id.hashCode);
+    hash = _SystemHash.combine(hash, docId.hashCode);
 
     return _SystemHash.finish(hash);
   }
@@ -135,8 +135,8 @@ class PortfolioDeleteDataProvider extends AutoDisposeFutureProvider<void> {
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 mixin PortfolioDeleteDataRef on AutoDisposeFutureProviderRef<void> {
-  /// The parameter `doc_id` of this provider.
-  String get doc_id;
+  /// The parameter `docId` of this provider.
+  String get docId;
 }
 
 class _PortfolioDeleteDataProviderElement
@@ -145,7 +145,7 @@ class _PortfolioDeleteDataProviderElement
   _PortfolioDeleteDataProviderElement(super.provider);
 
   @override
-  String get doc_id => (origin as PortfolioDeleteDataProvider).doc_id;
+  String get docId => (origin as PortfolioDeleteDataProvider).docId;
 }
 
 // ignore_for_file: type=lint

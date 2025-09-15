@@ -1,5 +1,6 @@
 import 'package:borsa_app/common/app_bar.dart';
 import 'package:borsa_app/core/utils/get_earning_calculation.dart';
+import 'package:borsa_app/core/utils/get_money_format.dart';
 import 'package:borsa_app/core/utils/get_text_earning.dart';
 import 'package:borsa_app/features/home_page/data/hisse.repository.dart';
 import 'package:borsa_app/features/home_page/domain/hisse_model.dart';
@@ -9,6 +10,7 @@ import 'package:borsa_app/features/portfolio/presentation/widgets/portfolio_hiss
 import 'package:borsa_app/features/portfolio/presentation/widgets/show_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dropdown_search/dropdown_search.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -37,7 +39,7 @@ class _PortfolioScreenState extends ConsumerState<PortfolioScreen> {
       backgroundColor: const Color(0xFF0B1D51),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
-        child: CommonAppBar(title: 'Portfolio'),
+        child: CommonAppBar(title: 'portfolio'.tr()),
       ),
       body: userPortfolioAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
@@ -54,7 +56,7 @@ class _PortfolioScreenState extends ConsumerState<PortfolioScreen> {
               child: SizedBox(
                 height: 300,
                 child: Text(
-                  'Yükleniyor...',
+                  'loading'.tr(),
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -74,7 +76,11 @@ class _PortfolioScreenState extends ConsumerState<PortfolioScreen> {
             int maliyet = int.tryParse(maliyetStr) ?? 0;
 
             toplamTutar += hisse.price * adet;
-            toplamKazanc += getEarningCalculation(hisse.price, adet, maliyet);
+            toplamKazanc += getEarningCalculation(
+              hisse.price,
+              adet,
+              maliyet.toDouble(),
+            );
           }
           toplamYatirim = toplamTutar - toplamKazanc;
 
@@ -104,7 +110,7 @@ class _PortfolioScreenState extends ConsumerState<PortfolioScreen> {
                         hisse: hisse,
                         portfolio: PortfolioAddParams(
                           name: ad,
-                          maliyet: int.parse(maliyet),
+                          maliyet: double.parse(maliyet),
                           adet: int.parse(adet),
                         ),
                         docId: doc.id,
@@ -119,7 +125,7 @@ class _PortfolioScreenState extends ConsumerState<PortfolioScreen> {
                     width: MediaQuery.sizeOf(context).width / 1.25,
                     margin: const EdgeInsets.only(bottom: 2),
                     decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha:  0.07),
+                      color: Colors.white.withValues(alpha: 0.07),
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(color: Colors.white24),
                     ),
@@ -127,11 +133,11 @@ class _PortfolioScreenState extends ConsumerState<PortfolioScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Text(
-                          'Toplam Yatırım:${toplamYatirim.toStringAsFixed(2)} TRY',
+                          '${'totalInvestment'.tr()}: ${moneyFormat(toplamYatirim)} TRY',
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                         Text(
-                          'Güncel Değer: ${toplamTutar.toStringAsFixed(2)} TRY',
+                          '${'currentValue'.tr()}: ${moneyFormat(toplamTutar)} TRY',
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                         getTextEarning(toplamKazanc),

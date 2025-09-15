@@ -4,6 +4,7 @@ import 'package:borsa_app/common/controller/search_data.dart';
 import 'package:borsa_app/features/home_page/data/hisse.repository.dart';
 import 'package:borsa_app/features/home_page/domain/hisse_model.dart';
 import 'package:borsa_app/features/home_page/presentation/widgets/hisse_card.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -20,7 +21,7 @@ class HomePageScreen extends ConsumerWidget {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: CommonAppBar(
-          title: 'Hisseler',
+          title: 'stocks'.tr(),
           leadingIsActive: false,
           searchIsActive: true,
         ),

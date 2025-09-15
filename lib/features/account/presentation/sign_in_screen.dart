@@ -2,6 +2,7 @@ import 'package:borsa_app/core/utils/validators.dart';
 import 'package:borsa_app/features/account/controller.dart';
 import 'package:borsa_app/features/account/data/sign_in_repository.dart';
 import 'package:borsa_app/features/account/presentation/widgets/custom_text_form_field.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -45,14 +46,14 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                     children: <Widget>[
                       CustomTextFormField(
                         controller: _emailController,
-                        labelText: 'Email',
+                        labelText: 'email'.tr(),
                         validator: (String? value) =>
                             Validators().mailValidator(value),
                       ),
                       CustomTextFormField(
                         controller: _passwordController,
                         obsecureIsActive: true,
-                        labelText: 'Password',
+                        labelText: 'password'.tr(),
                         validator: (String? value) =>
                             Validators().passValidator(value),
                       ),
@@ -82,7 +83,7 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                               );
                             }
                           },
-                          child: const Text('Sign In'),
+                          child:  Text('login'.tr()),
                         ),
                       ),
                       TextButton(
@@ -90,7 +91,7 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                           ref.read(loginProvider.notifier).toggle();
                         },
                         child: Text(
-                          'Hesabınız yok mu? Kayıt olun',
+                          'noAccountText'.tr(),
                           style: TextStyle(color: Color(0xFF0B1D51)),
                         ),
                       ),

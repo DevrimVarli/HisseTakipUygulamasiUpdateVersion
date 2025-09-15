@@ -1,10 +1,12 @@
 import 'package:borsa_app/core/utils/get_color.dart';
 import 'package:borsa_app/core/utils/get_earning_calculation.dart';
 import 'package:borsa_app/core/utils/get_icon.dart';
+import 'package:borsa_app/core/utils/get_number_format.dart';
 import 'package:borsa_app/core/utils/get_text_earning.dart';
 import 'package:borsa_app/features/home_page/domain/hisse_model.dart';
 import 'package:borsa_app/features/portfolio/data/portfolio_delete_data_repository.dart';
 import 'package:borsa_app/features/portfolio/domain/portfolio_add_params.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -23,7 +25,6 @@ class PortfolioHisseCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
     TextTheme textTheme = Theme.of(context).textTheme;
-    
 
     return Container(
       height: 230,
@@ -63,7 +64,7 @@ class PortfolioHisseCard extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  'Değişim ${hisse.rate}%',
+                  '${'change'.tr()} ${hisse.rate}%',
                   style: textTheme.titleLarge?.copyWith(
                     color: getColor(hisse.rate),
                   ),
@@ -80,13 +81,13 @@ class PortfolioHisseCard extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  'Adet: ${portfolio.adet}',
+                  '${'quantity'.tr()}: ${formatInt(portfolio.adet)}',
                   style: textTheme.titleLarge?.copyWith(
                     color: colorScheme.surface.withValues(alpha: 0.75),
                   ),
                 ),
                 Text(
-                  'Maliyet: ${portfolio.maliyet}',
+                  '${'cost'.tr()}: ${formatDouble(portfolio.maliyet.toDouble())}',
                   style: textTheme.titleLarge?.copyWith(
                     color: colorScheme.surface.withValues(alpha: 0.75),
                   ),

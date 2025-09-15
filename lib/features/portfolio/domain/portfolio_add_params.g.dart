@@ -10,7 +10,7 @@ _$PortfolioAddParamsImpl _$$PortfolioAddParamsImplFromJson(
   Map<String, dynamic> json,
 ) => _$PortfolioAddParamsImpl(
   name: json['name'] as String,
-  maliyet: (json['maliyet'] as num).toInt(),
+  maliyet: (json['maliyet'] as num).toDouble(),
   adet: (json['adet'] as num).toInt(),
 );
 

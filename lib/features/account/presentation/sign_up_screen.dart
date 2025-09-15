@@ -3,6 +3,7 @@ import 'package:borsa_app/features/account/controller.dart';
 import 'package:borsa_app/features/account/data/sign_up_repository.dart';
 import 'package:borsa_app/features/account/domain/sign_up_params.dart';
 import 'package:borsa_app/features/account/presentation/widgets/custom_text_form_field.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -49,32 +50,32 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                     children: <Widget>[
                       CustomTextFormField(
                         controller: _emailController,
-                        labelText: 'Email',
+                        labelText: 'email'.tr(),
                         validator: (String? value) =>
                             Validators().mailValidator(value),
                       ),
                       CustomTextFormField(
                         controller: _passwordController,
-                        labelText: 'Password',
+                        labelText: 'password'.tr(),
                         obsecureIsActive: true,
                         validator: (String? value) =>
                             Validators().passValidator(value),
                       ),
                       CustomTextFormField(
                         controller: _phoneController,
-                        labelText: 'Phone Number',
+                        labelText: 'phoneNumber'.tr(),
                         validator: (String? value) =>
                             Validators().phoneNumberValidator(value),
                       ),
                       CustomTextFormField(
                         controller: _firstNameController,
-                        labelText: 'First Name',
+                        labelText: 'name'.tr(),
                         validator: (String? value) =>
                             Validators().firstNameValidator(value),
                       ),
                       CustomTextFormField(
                         controller: _lastNameController,
-                        labelText: 'Last Name',
+                        labelText: 'surname'.tr(),
                         validator: (String? value) =>
                             Validators().lastNameValidator(value),
                       ),
@@ -110,7 +111,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                               );
                             }
                           },
-                          child: const Text('Sign Up'),
+                          child:  Text('signUp'.tr()),
                         ),
                       ),
                       TextButton(
@@ -118,7 +119,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                           ref.read(loginProvider.notifier).toggle();
                         },
                         child: Text(
-                          'Mevcut hesabınız var mı? Giriş yapın',
+                          'haveAccountText'.tr(),
                           style: TextStyle(color: Color(0xFF0B1D51)),
                         ),
                       ),

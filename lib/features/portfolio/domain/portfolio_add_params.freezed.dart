@@ -22,7 +22,7 @@ PortfolioAddParams _$PortfolioAddParamsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PortfolioAddParams {
   String get name => throw _privateConstructorUsedError;
-  int get maliyet => throw _privateConstructorUsedError;
+  double get maliyet => throw _privateConstructorUsedError;
   int get adet => throw _privateConstructorUsedError;
 
   /// Serializes this PortfolioAddParams to a JSON map.
@@ -42,7 +42,7 @@ abstract class $PortfolioAddParamsCopyWith<$Res> {
     $Res Function(PortfolioAddParams) then,
   ) = _$PortfolioAddParamsCopyWithImpl<$Res, PortfolioAddParams>;
   @useResult
-  $Res call({String name, int maliyet, int adet});
+  $Res call({String name, double maliyet, int adet});
 }
 
 /// @nodoc
@@ -73,7 +73,7 @@ class _$PortfolioAddParamsCopyWithImpl<$Res, $Val extends PortfolioAddParams>
             maliyet: null == maliyet
                 ? _value.maliyet
                 : maliyet // ignore: cast_nullable_to_non_nullable
-                      as int,
+                      as double,
             adet: null == adet
                 ? _value.adet
                 : adet // ignore: cast_nullable_to_non_nullable
@@ -93,7 +93,7 @@ abstract class _$$PortfolioAddParamsImplCopyWith<$Res>
   ) = __$$PortfolioAddParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, int maliyet, int adet});
+  $Res call({String name, double maliyet, int adet});
 }
 
 /// @nodoc
@@ -123,7 +123,7 @@ class __$$PortfolioAddParamsImplCopyWithImpl<$Res>
         maliyet: null == maliyet
             ? _value.maliyet
             : maliyet // ignore: cast_nullable_to_non_nullable
-                  as int,
+                  as double,
         adet: null == adet
             ? _value.adet
             : adet // ignore: cast_nullable_to_non_nullable
@@ -148,7 +148,7 @@ class _$PortfolioAddParamsImpl implements _PortfolioAddParams {
   @override
   final String name;
   @override
-  final int maliyet;
+  final double maliyet;
   @override
   final int adet;
 
@@ -191,7 +191,7 @@ class _$PortfolioAddParamsImpl implements _PortfolioAddParams {
 abstract class _PortfolioAddParams implements PortfolioAddParams {
   const factory _PortfolioAddParams({
     required final String name,
-    required final int maliyet,
+    required final double maliyet,
     required final int adet,
   }) = _$PortfolioAddParamsImpl;
 
@@ -201,7 +201,7 @@ abstract class _PortfolioAddParams implements PortfolioAddParams {
   @override
   String get name;
   @override
-  int get maliyet;
+  double get maliyet;
   @override
   int get adet;
 

@@ -1,6 +1,7 @@
 import 'package:borsa_app/features/account/presentation/login_screen.dart';
 import 'package:borsa_app/features/favorites/presentation/favorites_screen.dart';
 import 'package:borsa_app/features/home_page/presentation/home_page_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class BottomAppNavigation extends StatefulWidget {
@@ -28,13 +29,13 @@ class _BottomAppNavigationState extends State<BottomAppNavigation> {
             _selectedIndex = index;
           });
         },
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        items:  <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'.tr()),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            label: 'Favorites',
+            label: 'favorites'.tr(),
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'.tr()),
         ],
         backgroundColor: Color(0xFF0B1D51),
         selectedItemColor: Colors.white,

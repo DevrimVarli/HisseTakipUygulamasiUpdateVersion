@@ -5,7 +5,7 @@ part 'portfolio_add_params.g.dart';
 class PortfolioAddParams with _$PortfolioAddParams {
   const factory PortfolioAddParams({
     required String name,
-    required int maliyet,
+    required double maliyet,
     required int adet,
   }) = _PortfolioAddParams;
   factory PortfolioAddParams.fromJson(Map<String, dynamic> json) => _$PortfolioAddParamsFromJson(json);
